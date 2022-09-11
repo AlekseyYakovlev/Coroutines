@@ -9,3 +9,5 @@ import ru.mts.data.news.repository.News
 data class NewsEntity(@PrimaryKey @ColumnInfo(name = "id") val id: Int)
 
 fun NewsEntity.toDomain() = News(this.id)
+
+fun News.toNewsEntity() = NewsEntity(this.id)

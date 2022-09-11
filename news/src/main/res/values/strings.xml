@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="news__error_text">Произошла ошибка: %1$s</string>
+    <string name="news__retry_text">Попробовать еще раз</string>
+</resources>

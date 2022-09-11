@@ -6,6 +6,7 @@ task clean(type: Delete) {
 buildscript {
     ext.kotlin_version = "1.7.0"
     ext.compose_version = "1.2.0"
+    ext.accompanist_version = "0.25.0"
 
     ext.versionMajor = 1
     ext.versionMinor = 0
