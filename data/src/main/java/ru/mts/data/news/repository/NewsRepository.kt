@@ -34,12 +34,10 @@ class NewsRepository(
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    suspend fun getNews(): Flow<Result<News, Throwable>> {
-        return newsLocalDataSource.getNewsFlow()
-            .mapLatest { newsEntities ->
-                newsEntities
-                    ?.let { Result.Success(it.toDomain()) }
-                    ?: updateNews()
-            }
-    }
+    val newsFlow: Flow<Result<News, Throwable>> = newsLocalDataSource.getNewsFlow()
+        .mapLatest { newsEntities ->
+            newsEntities
+                ?.let { Result.Success(it.toDomain()) }
+                ?: updateNews()
+        }
 }
